@@ -1,1 +1,1 @@
-web:./deploy.sh
+web: gunicorn apps:create_app()
