@@ -12,11 +12,8 @@ MarkupSafe==1.1.1
 more-itertools==8.4.0
 packaging==20.4
 pluggy==0.13.1
-py @ file:///tmp/build/80754af9/py_1593446248552/work
 pyparsing==2.4.7
 pytest==5.4.3
-pytest-cov @ file:///tmp/build/80754af9/pytest-cov_1593202544670/work
 six==1.15.0
-wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
 Werkzeug==1.0.1
 wincertstore==0.2
