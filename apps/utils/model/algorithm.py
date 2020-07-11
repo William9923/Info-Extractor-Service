@@ -1,4 +1,4 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABCMeta, abstractmethod, abstractproperty
 
 from apps.utils.kmp import knuth_morris_prath
 from apps.utils.bm import boyer_moore
@@ -9,30 +9,79 @@ class BaseAlgorithm(metaclass=ABCMeta):
     def find(self):
         pass 
 
+    @abstractproperty
+    def pattern(self) -> str:
+        pass 
+
+    @abstractproperty
+    def text(self) -> str:
+        pass 
+
 class KMPAlgorithm(BaseAlgorithm):
-    def __init__(self, pattern, text):
-        self.pattern = pattern 
-        self.text = text 
 
     def find(self):
-        return knuth_morris_prath(self.pattern, self.text)
+        return knuth_morris_prath(self._pattern, self._text)
+    
+    @property
+    def pattern(self) -> str:
+        return self._pattern
+
+    @pattern.setter
+    def pattern(self, value):
+        self._pattern = value
+
+    @property
+    def text(self) -> str:
+        return self._text
+
+    @text.setter
+    def text(self, value):
+        self._text = value
 
 
 class BMAlgorithm(BaseAlgorithm):
-    def __init__(self, pattern, text):
-        self.pattern = pattern 
-        self.text = text 
 
     def find(self):
-        return boyer_moore(self.pattern, self.text)
+        return boyer_moore(self._pattern, self._text)
+
+    @property
+    def pattern(self) -> str:
+        return self._pattern
+
+    @pattern.setter
+    def pattern(self, value):
+        self._pattern = value
+
+    @property
+    def text(self) -> str:
+        return self._text
+
+    @text.setter
+    def text(self, value):
+        self._text = value
+
 
 class RegexAlgorithm(BaseAlgorithm):
-    def __init__(self, pattern, text):
-        self.pattern = pattern 
-        self.text = text 
 
     def find(self):
-        return regex_function(self.pattern, self.text)
+        return regex_function(self._pattern, self._text)
+
+    @property
+    def pattern(self) -> str:
+        return self._pattern
+
+    @pattern.setter
+    def pattern(self, value):
+        self._pattern = value
+
+    @property
+    def text(self) -> str:
+        return self._text
+
+    @text.setter
+    def text(self, value):
+        self._text = value
+
 
 
 

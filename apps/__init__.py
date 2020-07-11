@@ -2,8 +2,8 @@ import os
 
 from flask import Flask
 
-from apps.matcher_text.text import text 
-from apps.matcher_scraper.scraper import scraper  
+from apps.matcher_text.blueprint import text 
+from apps.matcher_scraper.blueprint import scraper  
 
 def create_app(test_config=None):
     # create and configure the app
