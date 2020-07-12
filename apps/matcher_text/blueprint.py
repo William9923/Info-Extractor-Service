@@ -2,22 +2,36 @@ from flask import Blueprint, render_template, abort, request, jsonify
 
 from apps.utils.config import generate_prefix_key
 
-from apps.matcher_text.util import *
+from apps.matcher_text.service import *
+from apps.utils.model.algorithm import *
+from apps.utils.model.preprocess import *
+from apps.utils.model.output import *
+from apps.utils.model.validation import *
 
 text =  Blueprint('text', __name__, url_prefix= generate_prefix_key() + "/text")
 
 @text.route('/', methods=['POST', 'GET'])
 def text_service():
-    if request.method == "POST":
-        factory = ServiceFactory(request.form)
+    form = TextForm(request.form)
+    if request.method == "POST" and form.validate():
+        # inject the dependencies into the service
         service = TextService(KMPAlgorithm(), TextPreprocessor(), TextOutputter())
+
+        # inject data needed
         service.data = {
             'keyword' : request.form.get('keyword'),
             'content' : request.form.get('content'),
         }
+
+        # exec the service
         return service.do()
 
+    elif not form.validate():
+        return jsonify({
+            "error" : "Form not filled correctly"
+        })
+        
     return jsonify({
-        "message" : "Text Matcher Service"
+        "message" : "Welcome to Text Matcher Service"
     })
 

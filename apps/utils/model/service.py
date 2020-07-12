@@ -1,13 +1,15 @@
-from abc import ABCMeta, abstractmethod, abstractproperty
+from abc import abstractmethod, abstractproperty
 
-class Service(ABCMeta):
+class Service(object):
     @abstractmethod
-    def do(self):
+    def preprocess(self, request):
+        pass
+
+    @abstractproperty
+    def data(self):
         pass 
 
     @abstractmethod
     def get_stats(self):
-        pass
+        pass 
 
-
-    
