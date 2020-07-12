@@ -7,6 +7,6 @@ class Outputter(object):
     def output(self, data):
         pass
 
-class TextOutputter(Outputter):
+class JsonOutputter(Outputter):
     def output(self, data):
         return jsonify(**data)

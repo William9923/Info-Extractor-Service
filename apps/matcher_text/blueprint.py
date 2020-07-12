@@ -13,24 +13,24 @@ text =  Blueprint('text', __name__, url_prefix= generate_prefix_key() + "/text")
 @text.route('/', methods=['POST', 'GET'])
 def text_service():
     form = TextForm(request.form)
-    if request.method == "POST" and form.validate():
-        # inject the dependencies into the service
-        service = TextService(KMPAlgorithm(), TextPreprocessor(), TextOutputter())
+    if request.method == "POST" :
+        if form.validate():
+            # inject the dependencies into the service
+            service = TextService(KMPAlgorithm(), TextPreprocessor(), JsonOutputter())
 
-        # inject data needed
-        service.data = {
-            'keyword' : request.form.get('keyword'),
-            'content' : request.form.get('content'),
-        }
+            # inject data needed
+            service.data = {
+                'keyword' : request.form.get('keyword'),
+                'content' : request.form.get('content'),
+            }
 
-        # exec the service
-        return service.do()
+            # exec the service
+            return service.do()
+        else :
+            return jsonify({
+                "error" : "Form not filled correctly"
+            })
 
-    elif not form.validate():
-        return jsonify({
-            "error" : "Form not filled correctly"
-        })
-        
     return jsonify({
         "message" : "Welcome to Text Matcher Service"
     })
