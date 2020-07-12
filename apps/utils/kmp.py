@@ -1,3 +1,4 @@
+from typing import List, Dict
 """
 	KMP : Knuth-Morris-Pratt Algorithm Module
 """
@@ -6,7 +7,7 @@
 	@param : pattern,text
 	@return : list of index which pattern match the text
 """
-def knuth_morris_prath(pattern, text) :
+def knuth_morris_prath(pattern: str, text: str) -> List[int] :
 	n = len(text)						# Text length cache
 	m = len(pattern)					# Pattern length cache
 	i = 0								# Text traverse pointer tracker
@@ -32,7 +33,7 @@ def knuth_morris_prath(pattern, text) :
 	@param : pattern,text
 	@return : index of the first pattern occurence in text
 """
-def kmp_first_occurence(pattern,text):
+def kmp_first_occurence(pattern: str,text: str) -> int:
 	index_list = knuth_morris_prath(pattern,text)
 	return index_list[0] if len(index_list) > 0 else None 
 
@@ -41,7 +42,7 @@ def kmp_first_occurence(pattern,text):
 	@param : pattern
 	@return : list of border / failure value for KMP algorithm preprocessing
 """
-def failure_function(pattern):
+def failure_function(pattern: str) -> List[int]:
 	fail = [0] * len(pattern)
 	fail[0] = 0
 

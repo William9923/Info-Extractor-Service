@@ -1,4 +1,5 @@
 from abc import ABCMeta, abstractmethod, abstractproperty
+from typing import List
 
 from apps.utils.kmp import knuth_morris_prath
 from apps.utils.bm import boyer_moore
@@ -6,7 +7,7 @@ from apps.utils.regex import regex_function
 
 class BaseAlgorithm(metaclass=ABCMeta):
     @abstractmethod
-    def find(self):
+    def find(self) -> List[int]:
         pass 
 
     @abstractproperty
@@ -19,7 +20,7 @@ class BaseAlgorithm(metaclass=ABCMeta):
 
 class KMPAlgorithm(BaseAlgorithm):
 
-    def find(self):
+    def find(self) -> List[int]:
         return knuth_morris_prath(self._pattern, self._text)
     
     @property
@@ -41,7 +42,7 @@ class KMPAlgorithm(BaseAlgorithm):
 
 class BMAlgorithm(BaseAlgorithm):
 
-    def find(self):
+    def find(self) -> List[int]:
         return boyer_moore(self._pattern, self._text)
 
     @property
@@ -63,7 +64,7 @@ class BMAlgorithm(BaseAlgorithm):
 
 class RegexAlgorithm(BaseAlgorithm):
 
-    def find(self):
+    def find(self) -> List[int]:
         return regex_function(self._pattern, self._text)
 
     @property

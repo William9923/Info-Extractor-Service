@@ -1,4 +1,5 @@
 import math
+from typing import List, Dict
 """
 	BM : Boyer Moore Algorithm Module
 """
@@ -7,7 +8,7 @@ import math
 	@param : pattern,text
 	@return : list of index which pattern match the text
 """
-def boyer_moore(pattern, text):
+def boyer_moore(pattern: str, text: str) -> List[int]:
 	last = last_occurrence_function(pattern, text)
 	n = len(text)
 	m = len(pattern)
@@ -41,7 +42,7 @@ def boyer_moore(pattern, text):
 	@param : pattern,text
 	@return : index of the first pattern occurence in text
 """
-def boyer_moore_first_occurence(pattern, text):
+def boyer_moore_first_occurence(pattern: str, text: str) -> int:
 	index_list = boyer_moore(pattern,text)
 	return index_list[0] if len(index_list) > 0 else None 
 
@@ -49,7 +50,7 @@ def boyer_moore_first_occurence(pattern, text):
 	@param : pattern & text
 	@return : map of key-value : <character in text> - <its mapping to the pattern>
 """
-def last_occurrence_function(pattern, text):
+def last_occurrence_function(pattern: str, text: str) -> Dict[str,int]:
 	keys = set(text)
 	dict = {}
 	for key in keys:

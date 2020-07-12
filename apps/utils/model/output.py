@@ -1,5 +1,6 @@
 from abc import ABCMeta, abstractmethod
 from flask import jsonify
+from typing import Dict, Any
 
 
 class Outputter(object):
@@ -8,5 +9,5 @@ class Outputter(object):
         pass
 
 class JsonOutputter(Outputter):
-    def output(self, data):
+    def output(self, data) -> Dict[str, Any]:
         return jsonify(**data)

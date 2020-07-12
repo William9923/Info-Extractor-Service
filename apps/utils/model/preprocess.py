@@ -2,6 +2,7 @@ from abc import ABCMeta, abstractmethod
 from copy import copy
 from nltk.tokenize import word_tokenize , sent_tokenize 
 from flask import Markup
+from typing import Dict, Any
 
 class Preprocessor(object):
     @abstractmethod
@@ -9,7 +10,7 @@ class Preprocessor(object):
         pass
 
 class TextPreprocessor(Preprocessor):
-    def preprocess(self, request):
+    def preprocess(self, request) -> Dict[str, Any]:
         data = {}
         data["keyword"] = request["keyword"].lower()
         text = sent_tokenize(request["content"])
