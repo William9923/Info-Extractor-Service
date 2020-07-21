@@ -83,6 +83,19 @@ class RegexAlgorithm(BaseAlgorithm):
     def text(self, value):
         self._text = value
 
+class AlgorithmFactory(object):
+    def getAlgo(self, format):
+        if format === "kmp":
+            return KMPAlgorithm()
+        elif format == "bm":
+            return BMAlgorithm()
+        elif format == "regex":
+            return RegexAlgorithm()
+        else :
+            raise ValueError(format)
+
+        
+
 
 
 

@@ -3,6 +3,8 @@ from copy import copy
 from nltk.tokenize import word_tokenize , sent_tokenize 
 from flask import Markup
 from typing import Dict, Any
+import requests
+from bs4 import BeautifulSoup
 
 class Preprocessor(object):
     @abstractmethod
@@ -26,3 +28,29 @@ class TextPreprocessor(Preprocessor):
 
         data['content'] = word_tokenized
         return data
+
+class WebPreprocessor(Preprocessor):
+    def preprocess(self, request):
+        data = {}
+        data["keyword"] = request["keyword"].lower()
+        r = requests.get(request["url"])
+        text = self.get_content(r)
+
+        text = sent_tokenize(request["content"])
+ 
+        text_processed = copy(text)
+
+        for i in range(len(text)):
+            text_processed[i] = Markup(text[i].strip().lower().replace('\n','')).striptags()
+
+        word_tokenized = []
+        for row in text_processed:
+            word_tokenized.append(word_tokenize(row))
+
+        data['content'] = word_tokenized
+        return data
+
+
+    def get_content(self,r):
+        soup = BeautifulSoup(r.content, 'html.parser')
+        return soup.get_text()
