@@ -12,34 +12,22 @@ cryptography==2.9.2
 Flask==1.1.2
 Flask-WTF==0.14.3
 gunicorn==20.0.4
-idna @ file:///tmp/build/80754af9/idna_1593446292537/work
 itsdangerous==1.1.0
 Jinja2==2.11.2
-joblib @ file:///tmp/build/80754af9/joblib_1594236160679/work
 MarkupSafe==1.1.1
 more-itertools==8.4.0
-mypy @ file:///tmp/build/80754af9/mypy_1593442617121/work
-mypy-extensions==0.4.3
-nltk @ file:///tmp/build/80754af9/nltk_1592496090529/work
+nltk==3.5
 packaging==20.4
 pluggy==0.13.1
 psutil==5.7.0
-py @ file:///tmp/build/80754af9/py_1593446248552/work
-pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
-pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1594392929924/work
 pyparsing==2.4.7
 PySocks==1.7.1
 pytest==5.4.3
-pytest-cov @ file:///tmp/build/80754af9/pytest-cov_1593202544670/work
-regex @ file:///C:/ci/regex_1593419644658/work
-requests @ file:///tmp/build/80754af9/requests_1592841827918/work
+requests==2.24.0
 six==1.15.0
 soupsieve==2.0.1
-tqdm @ file:///tmp/build/80754af9/tqdm_1593446365756/work
 typed-ast==1.4.1
-typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1592847887441/work
 urllib3==1.25.9
-wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
 Werkzeug==1.0.1
 win-inet-pton==1.1.0
 wincertstore==0.2
