@@ -2,7 +2,6 @@ from abc import ABCMeta, abstractmethod
 from flask import jsonify
 from typing import Dict, Any
 
-
 class Outputter(object):
     @abstractmethod
     def output(self, data):

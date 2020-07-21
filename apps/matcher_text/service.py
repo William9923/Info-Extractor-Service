@@ -6,4 +6,4 @@ from apps.utils.model.output import *
 
 class TextService(Service):
     def __init__ (self, algo):
-        self.super.__init__(algo, TextPreprocessor(), JsonOutputter())
+        super().__init__(algo, TextPreprocessor(), JsonOutputter())

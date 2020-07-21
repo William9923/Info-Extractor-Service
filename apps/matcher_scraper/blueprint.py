@@ -10,7 +10,7 @@ from apps.utils.model.validation import *
 
 scraper =  Blueprint('scraper', __name__, url_prefix=generate_prefix_key() + "/scraper")
 
-@scraper.route('/')
+@scraper.route('/', methods=['POST', 'GET'])
 def scraper_service():
     form = ScrapperForm(request.form)
     if request.method == "POST" :
@@ -29,7 +29,7 @@ def scraper_service():
             # inject data needed
             service.data = {
                 'keyword' : request.form.get('keyword'),
-                'content' : request.form.get('content'),
+                'url' : request.form.get('url'),
             }
 
             # exec the service

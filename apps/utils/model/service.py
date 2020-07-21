@@ -1,4 +1,6 @@
 from typing import Dict, Any
+from apps.utils.config import generate_random_seperator
+import time
 
 class Service(object):
     def __init__ (self, algo, preprocessor, outputter):
@@ -54,7 +56,7 @@ class Service(object):
                 processed_row.append(new_word)
 
             if contains:
-                list_of_answer.append("".join(processed_row))
+                list_of_answer.append(" ".join(processed_row))
 
         self.time = time.time() - t
 

@@ -85,7 +85,7 @@ class RegexAlgorithm(BaseAlgorithm):
 
 class AlgorithmFactory(object):
     def getAlgo(self, format):
-        if format === "kmp":
+        if format == "kmp":
             return KMPAlgorithm()
         elif format == "bm":
             return BMAlgorithm()
@@ -94,7 +94,7 @@ class AlgorithmFactory(object):
         else :
             raise ValueError(format)
 
-        
+
 
 
 

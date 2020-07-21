@@ -30,14 +30,13 @@ class TextPreprocessor(Preprocessor):
         return data
 
 class WebPreprocessor(Preprocessor):
-    def preprocess(self, request):
+    def preprocess(self, request)  -> Dict[str, Any] :
         data = {}
         data["keyword"] = request["keyword"].lower()
         r = requests.get(request["url"])
-        text = self.get_content(r)
+        full_text = self.get_content(r)
 
-        text = sent_tokenize(request["content"])
- 
+        text = sent_tokenize(full_text)
         text_processed = copy(text)
 
         for i in range(len(text)):
