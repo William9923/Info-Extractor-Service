@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, abort, request, jsonify
+from flask import Blueprint, render_template, abort, request, jsonify, current_app
+import logging 
 
 from apps.utils.config import generate_prefix_key
 
@@ -8,10 +9,13 @@ from apps.utils.model.preprocess import *
 from apps.utils.model.output import *
 from apps.utils.model.validation import *
 
+LOG = logging.getLogger(__name__)
 scraper =  Blueprint('scraper', __name__, url_prefix=generate_prefix_key() + "/scraper")
 
 @scraper.route('/', methods=['POST', 'GET'])
 def scraper_service():
+
+    LOG.info("Scrapper Service Called")
     form = ScrapperForm(request.form)
     if request.method == "POST" :
         if form.validate():
@@ -19,22 +23,22 @@ def scraper_service():
             try :
                 algo = factory.getAlgo(request.form["algo"])
             except ValueError :
-                # log information
+                LOG.error("Failed to parse algorithm. Using default algorith : regex")
                 algo = factory.getAlgo("regex")
 
-
-            # inject the dependencies into the service
             service = ScrapperService(algo)
 
-            # inject data needed
+            LOG.info("Injecting service data")
             service.data = {
                 'keyword' : request.form.get('keyword'),
                 'url' : request.form.get('url'),
             }
 
-            # exec the service
+            LOG.info("Executing Scrapper service")
             return service.do()
         else :
+
+            LOG.warning("Data Form not filled correctly. Beware of malicious attemps!!")
             return jsonify({
                 "error" : "Prerequiste data not filled correctly"
             })
