@@ -55,7 +55,7 @@ def create_app(test_config=None):
         # start with the correct headers and status code from the error
         response = e.get_response()
         # replace the body with JSON
-        response.data = json.dumps({
+        response.data = jsonify({
             "code": e.code,
             "name": e.name,
             "description": e.description,
