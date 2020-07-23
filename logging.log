@@ -32,3 +32,139 @@ INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 15:34:27] "[31m[1mPOST / HTTP/1.1[0m
 INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 15:34:33] "[37mGET / HTTP/1.1[0m" 200 -
 INFO:werkzeug: * Detected change in 'C:\\Users\\William\\Documents\\dev\\proj\\KeyMatcher\\Key-MatcherBE\\apps\\__init__.py', reloading
 INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 116-214-213
+INFO:werkzeug: * Running on http://127.0.0.1:3000/ (Press CTRL+C to quit)
+INFO:apps.matcher_text.blueprint:Text Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_text.blueprint:Injecting service data
+INFO:apps.matcher_text.blueprint:Executing Text service
+INFO:apps.utils.model.service:Starting service process ...
+INFO:apps.utils.model.preprocess:Content Summary : [['aaaaaaaaaaaaaaaaaaa']]
+DEBUG:apps.utils.model.service:[['aaaaaaaaaaaaaaaaaaa']]
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 16:57:51] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -
+INFO:apps.matcher_text.blueprint:Text Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_text.blueprint:Injecting service data
+INFO:apps.matcher_text.blueprint:Executing Text service
+INFO:apps.utils.model.service:Starting service process ...
+INFO:apps.utils.model.preprocess:Content Summary : [['aaaaaaaaaaaaaaaaaaa']]
+DEBUG:apps.utils.model.service:[['aaaaaaaaaaaaaaaaaaa']]
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 16:58:09] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -
+INFO:apps.matcher_text.blueprint:Text Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_text.blueprint:Injecting service data
+INFO:apps.matcher_text.blueprint:Executing Text service
+INFO:apps.utils.model.service:Starting service process ...
+INFO:apps.utils.model.preprocess:Content Summary : [['aaaaaaaaaaaaaaaaaaa']]
+DEBUG:apps.utils.model.service:[['aaaaaaaaaaaaaaaaaaa']]
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 16:58:17] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -
+INFO:apps.matcher_text.blueprint:Text Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_text.blueprint:Injecting service data
+INFO:apps.matcher_text.blueprint:Executing Text service
+INFO:apps.utils.model.service:Starting service process ...
+INFO:apps.utils.model.preprocess:Content Summary : [['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+DEBUG:apps.utils.model.service:[['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 16:58:39] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -
+INFO:apps.matcher_text.blueprint:Text Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_text.blueprint:Injecting service data
+INFO:apps.matcher_text.blueprint:Executing Text service
+INFO:apps.utils.model.service:Starting service process ...
+INFO:apps.utils.model.preprocess:Content Summary : [['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+DEBUG:apps.utils.model.service:[['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 16:58:41] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -
+INFO:apps.matcher_text.blueprint:Text Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_text.blueprint:Injecting service data
+INFO:apps.matcher_text.blueprint:Executing Text service
+INFO:apps.utils.model.service:Starting service process ...
+INFO:apps.utils.model.preprocess:Content Summary : [['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+DEBUG:apps.utils.model.service:[['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 16:58:42] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -
+INFO:apps.matcher_text.blueprint:Text Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_text.blueprint:Injecting service data
+INFO:apps.matcher_text.blueprint:Executing Text service
+INFO:apps.utils.model.service:Starting service process ...
+INFO:apps.utils.model.preprocess:Content Summary : [['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+DEBUG:apps.utils.model.service:[['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 16:58:43] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -
+INFO:apps.matcher_text.blueprint:Text Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_text.blueprint:Injecting service data
+INFO:apps.matcher_text.blueprint:Executing Text service
+INFO:apps.utils.model.service:Starting service process ...
+INFO:apps.utils.model.preprocess:Content Summary : [['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+DEBUG:apps.utils.model.service:[['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 16:58:44] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -
+INFO:apps.matcher_text.blueprint:Text Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_text.blueprint:Injecting service data
+INFO:apps.matcher_text.blueprint:Executing Text service
+INFO:apps.utils.model.service:Starting service process ...
+INFO:apps.utils.model.preprocess:Content Summary : [['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+DEBUG:apps.utils.model.service:[['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 16:58:45] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -
+INFO:apps.matcher_text.blueprint:Text Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_text.blueprint:Injecting service data
+INFO:apps.matcher_text.blueprint:Executing Text service
+INFO:apps.utils.model.service:Starting service process ...
+INFO:apps.utils.model.preprocess:Content Summary : [['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+DEBUG:apps.utils.model.service:[['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 16:58:47] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -
+INFO:apps.matcher_text.blueprint:Text Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_text.blueprint:Injecting service data
+INFO:apps.matcher_text.blueprint:Executing Text service
+INFO:apps.utils.model.service:Starting service process ...
+INFO:apps.utils.model.preprocess:Content Summary : [['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+DEBUG:apps.utils.model.service:[['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 16:58:55] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -
+INFO:apps.matcher_text.blueprint:Text Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_text.blueprint:Injecting service data
+INFO:apps.matcher_text.blueprint:Executing Text service
+INFO:apps.utils.model.service:Starting service process ...
+INFO:apps.utils.model.preprocess:Content Summary : [['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+DEBUG:apps.utils.model.service:[['yayayayayayaya', 'yayayay', 'yayayayayayaya']]
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [23/Jul/2020 16:59:03] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -

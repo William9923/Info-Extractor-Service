@@ -3,18 +3,15 @@ import logging
 
 from apps.utils.config import generate_prefix_key
 
-from apps.matcher_scraper.service import *
-from apps.utils.model.algorithm import *
-from apps.utils.model.preprocess import *
-from apps.utils.model.output import *
-from apps.utils.model.validation import *
+from apps.matcher_scraper.service import ScrapperService
+from apps.utils.model.algorithm import AlgorithmFactory
+from apps.utils.model.validation import ScrapperForm
 
 LOG = logging.getLogger(__name__)
 scraper =  Blueprint('scraper', __name__, url_prefix=generate_prefix_key() + "/scraper")
 
 @scraper.route('/', methods=['POST', 'GET'])
 def scraper_service():
-
     LOG.info("Scrapper Service Called")
     form = ScrapperForm(request.form)
     if request.method == "POST" :

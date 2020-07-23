@@ -38,7 +38,7 @@ class TextPreprocessor(Preprocessor):
         LOG.info(f"Content Summary : {data['content']}")
         return data
 
-class WebPreprocessor(Preprocessor):
+class URLPreprocessor(Preprocessor):
     def preprocess(self, request)  -> Dict[str, Any] :
         data = {}
         data["keyword"] = request["keyword"].lower()

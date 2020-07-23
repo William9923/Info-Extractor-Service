@@ -1,8 +1,8 @@
 import time
 
-from apps.utils.model.service import *
-from apps.utils.model.preprocess import *
-from apps.utils.model.output import *
+from apps.utils.model.service import Service
+from apps.utils.model.preprocess import TextPreprocessor
+from apps.utils.model.output import JsonOutputter
 
 class TextService(Service):
     def __init__ (self, algo):

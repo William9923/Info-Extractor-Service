@@ -39,6 +39,9 @@ class KMPAlgorithm(BaseAlgorithm):
     def text(self, value):
         self._text = value
 
+    def __repr__(self):
+        return "KMP Algorithm"
+
 
 class BMAlgorithm(BaseAlgorithm):
 
@@ -61,6 +64,9 @@ class BMAlgorithm(BaseAlgorithm):
     def text(self, value):
         self._text = value
 
+    def __repr__(self):
+        return "BM Algorithm"
+
 
 class RegexAlgorithm(BaseAlgorithm):
 
@@ -82,6 +88,9 @@ class RegexAlgorithm(BaseAlgorithm):
     @text.setter
     def text(self, value):
         self._text = value
+
+    def __repr__(self):
+        return "Regex Algorithm"
 
 class AlgorithmFactory(object):
     def getAlgo(self, format):
