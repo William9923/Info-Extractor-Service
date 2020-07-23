@@ -14,7 +14,7 @@ from apps.utils.model.preprocess import *
 ])
 def test_Preprocess_tokenizer(input, expected_token):
     preprocessor = Preprocessor()
-    assert preprocessor.tokenizing(sent_tokenize(input)) == expected_token
+    assert preprocessor.tokenizing(input) == expected_token
 
 # data = {
 #     "keyword" : "",
