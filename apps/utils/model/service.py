@@ -43,6 +43,8 @@ class Service(object):
             formatted_data = self.preprocessor.preprocess(self.data)
             self.algo.pattern = formatted_data.get('keyword')
 
+            LOG.debug(formatted_data.get('content'))
+
             for row in formatted_data.get('content'):
                 self.word_count += len(row)
                 self.total_sentences += 1

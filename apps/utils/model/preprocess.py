@@ -6,6 +6,7 @@ from typing import Dict, Any
 import requests
 from bs4 import BeautifulSoup
 import logging
+from typing import List
 
 from apps.utils.model.error import PreprocessingException
 
@@ -16,16 +17,15 @@ class Preprocessor(object):
     def preprocess(self, request):
         pass
 
-    def tokenizing(self, text):
+    def tokenizing(self, text) -> List[List[str]]:
         text_processed = copy(text)
-
         for i in range(len(text)):
             text_processed[i] = Markup(text[i].strip().replace('\n','')).striptags()
 
         word_tokenized = []
         for row in text_processed:
             word_tokenized.append(word_tokenize(row))
-        
+
         return word_tokenized
 
 class TextPreprocessor(Preprocessor):
@@ -34,10 +34,8 @@ class TextPreprocessor(Preprocessor):
         data["keyword"] = request["keyword"].lower()
         text = sent_tokenize(request["content"])
 
-        result = self.tokenizing(text)
-
+        data['content'] = self.tokenizing(text)
         LOG.info(f"Content Summary : {data['content']}")
-        data['content'] = result
         return data
 
 class WebPreprocessor(Preprocessor):
@@ -52,8 +50,8 @@ class WebPreprocessor(Preprocessor):
         full_text = self.get_content(r)
         text = sent_tokenize(full_text)
 
-        LOG.info(f"Content Summary : {data['content']}")
         data['content'] = self.tokenizing(text)
+        LOG.info(f"Content Summary : {data['content']}")
         return data
 
 

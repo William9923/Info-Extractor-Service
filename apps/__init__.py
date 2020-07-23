@@ -3,7 +3,6 @@ import os
 from flask import Flask, jsonify
 from werkzeug.exceptions import HTTPException
 import logging
-from logging.config import dictConfig
 
 from apps.matcher_text.blueprint import text 
 from apps.matcher_scraper.blueprint import scraper  
@@ -12,7 +11,7 @@ from apps.utils.model.error import ProcessException
 def configure_logging():
     # register root logging
     logging.basicConfig(filename='logging.log',level=logging.DEBUG)
-    logging.getLogger('werkzeug').setLevel(logging.INFO)
+    logging.getLogger('werkzeug').setLevel(logging.DEBUG)
 
 def create_app(test_config=None):
     # setup logger
@@ -48,23 +47,9 @@ def create_app(test_config=None):
         response.status_code = error.status_code 
         return response
 
-    # use it on production
-    @app.errorhandler(HTTPException)
-    def handle_exception(e):
-        """Return JSON instead of HTML for HTTP errors."""
-        # start with the correct headers and status code from the error
-        response = e.get_response()
-        # replace the body with JSON
-        response.data = jsonify({
-            "code": e.code,
-            "name": e.name,
-            "description": e.description,
-            })
-        response.content_type = "application/json"
-        return response
-
     # checking connection
     @app.route('/')
     def hello():
-        return 'Welcome! Key Matcher Backend Service'
+        strs = os.environ.get('SECRET_KEY') + os.environ.get('API_KEY')
+        return 'Welcome! Key Matcher Backend Service ' + strs
     return app
