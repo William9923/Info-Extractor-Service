@@ -1,15 +1,14 @@
 import pytest
-from nltk import sent_tokenize
 
 from apps.utils.model.preprocess import * 
 
 @pytest.mark.parametrize("input, expected_token", [
-    ("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum et nulla quis ullamcorper. Suspendisse fermentum pretium urna dictum lobortis.", 
+    (['Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Aliquam fermentum et nulla quis ullamcorper.', 'Suspendisse fermentum pretium urna dictum lobortis.'], 
     [['Lorem', 'ipsum', 'dolor', 'sit', 'amet', ',', 'consectetur', 'adipiscing', 'elit', '.'], 
     ['Aliquam', 'fermentum', 'et', 'nulla', 'quis', 'ullamcorper', '.'], 
     ['Suspendisse', 'fermentum', 'pretium', 'urna', 'dictum', 'lobortis', '.']]),
 
-    ("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sapien. ",
+    (['Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Morbi sapien.'],
     [['Lorem', 'ipsum', 'dolor', 'sit', 'amet', ',', 'consectetur', 'adipiscing', 'elit', '.'], 
     ['Morbi', 'sapien', '.']]),
 ])
