@@ -32,3 +32,4 @@ Werkzeug==1.0.1
 win-inet-pton==1.1.0
 wincertstore==0.2
 WTForms==2.3.1
+python-dotenv==0.14.0 
