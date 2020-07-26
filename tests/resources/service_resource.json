@@ -1,0 +1,28 @@
+[
+    {
+        "input" : {
+            "keyword" : "Lorem",
+            "url" : "www.test1.com",
+            "content" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed augue aliquam, facilisis arcu quis, semper velit. Integer elementum molestie ultrices. Nullam ornare lorem velit. Sed vitae quam eu mi. "
+        },
+        "output" : {
+            "answer": [
+              "?=Lorem ipsum dolor sit amet , consectetur adipiscing elit .",
+              "Nullam ornare ?=lorem velit ."
+            ],
+            "metadata": {
+              "seperator": "?="
+            },
+            "stats": {
+              "keyword": 2,
+              "sentences": 2,
+              "success": true,
+              "time": 0.046419382095336914,
+              "total_sentences": 5,
+              "word": 38
+            }
+          }
+    }
+    
+]
+

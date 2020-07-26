@@ -1,6 +1,6 @@
 from typing import Dict, Any
 import logging
-from apps.utils.config import generate_random_seperator
+from apps.utils.config import generate_seperator
 from apps.utils.model.error import ServiceException
 import time
 
@@ -24,7 +24,7 @@ class Service(object):
         self.success = False 
 
         # metadata
-        self.seperator = generate_random_seperator()
+        self.seperator = generate_seperator()
 
     @property
     def data(self):

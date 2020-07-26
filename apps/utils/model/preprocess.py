@@ -42,11 +42,8 @@ class URLPreprocessor(Preprocessor):
     def preprocess(self, request)  -> Dict[str, Any] :
         data = {}
         data["keyword"] = request["keyword"].lower()
-        r = requests.get(request["url"])
+        r =  self.make_request(request["url"])
 
-        if not r.ok: # 4xx or 5xx
-            LOG.error(f"4xx or 5xx url web scrapping detected. URL : {request['url']}")
-            raise PreprocessingException(message="Scrapping Web Failed")  
         full_text = self.get_content(r)
         text = sent_tokenize(full_text)
 
@@ -54,6 +51,14 @@ class URLPreprocessor(Preprocessor):
         LOG.info(f"Content Summary : {data['content']}")
         return data
 
+    def make_request(self, url: str) -> Any:
+        r = requests.get(url)
+
+        if not r.ok: # 4xx or 5xx
+            LOG.error(f"4xx or 5xx url web scrapping detected. URL : {request['url']}")
+            raise PreprocessingException(message="Scrapping Web Failed")
+        
+        return r
 
     def get_content(self,r) -> str:
         soup = BeautifulSoup(r.content, 'html.parser')

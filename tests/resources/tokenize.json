@@ -1,0 +1,11 @@
+[
+    {
+        "input" : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Aliquam fermentum et nulla quis ullamcorper.", "Suspendisse fermentum pretium urna dictum lobortis."],
+        "output" : [["Lorem", "ipsum", "dolor", "sit", "amet", ",", "consectetur", "adipiscing", "elit", "."], ["Aliquam", "fermentum", "et", "nulla", "quis", "ullamcorper", "."], ["Suspendisse", "fermentum", "pretium", "urna", "dictum", "lobortis", "."]]
+    },
+    {
+        "input" : ["Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Morbi sapien."],
+        "output" : [["Lorem", "ipsum", "dolor", "sit", "amet", ",", "consectetur", "adipiscing", "elit", "."], ["Morbi", "sapien", "."]]
+    }
+
+]
