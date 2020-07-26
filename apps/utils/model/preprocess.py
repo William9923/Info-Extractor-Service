@@ -55,7 +55,7 @@ class URLPreprocessor(Preprocessor):
         r = requests.get(url)
 
         if not r.ok: # 4xx or 5xx
-            LOG.error(f"4xx or 5xx url web scrapping detected. URL : {request['url']}")
+            LOG.error(f"4xx or 5xx url web scrapping detected. URL : {url}")
             raise PreprocessingException(message="Scrapping Web Failed")
         
         return r

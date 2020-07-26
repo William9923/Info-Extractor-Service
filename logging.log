@@ -191,3 +191,40 @@ INFO:apps.utils.model.service:Creating process stats ...
 INFO:apps.utils.model.service:Ready to output process result
 INFO:apps.utils.model.output:Start Outputing Result
 INFO:werkzeug:127.0.0.1 - - [26/Jul/2020 10:16:44] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 116-214-213
+INFO:werkzeug: * Running on http://127.0.0.1:3000/ (Press CTRL+C to quit)
+INFO:apps.matcher_text.blueprint:Text Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_text.blueprint:Injecting service data
+INFO:apps.matcher_text.blueprint:Executing Text service
+INFO:apps.utils.model.service:Starting service process ...
+INFO:apps.utils.model.preprocess:Content Summary : [['Lorem', 'ipsum', 'dolor', 'sit', 'amet', ',', 'consectetur', 'adipiscing', 'elit', '.'], ['Aenean', 'sed', 'augue', 'aliquam', ',', 'facilisis', 'arcu', 'quis', ',', 'semper', 'velit', '.'], ['Integer', 'elementum', 'molestie', 'ultrices', '.'], ['Nullam', 'ornare', 'lorem', 'velit', '.'], ['Sed', 'vitae', 'quam', 'eu', 'mi', '.']]
+DEBUG:apps.utils.model.service:[['Lorem', 'ipsum', 'dolor', 'sit', 'amet', ',', 'consectetur', 'adipiscing', 'elit', '.'], ['Aenean', 'sed', 'augue', 'aliquam', ',', 'facilisis', 'arcu', 'quis', ',', 'semper', 'velit', '.'], ['Integer', 'elementum', 'molestie', 'ultrices', '.'], ['Nullam', 'ornare', 'lorem', 'velit', '.'], ['Sed', 'vitae', 'quam', 'eu', 'mi', '.']]
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [26/Jul/2020 11:40:08] "[37mPOST /api/v1/text/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Jul/2020 11:40:15] "[35m[1mPOST /api/v1/scraper HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [26/Jul/2020 11:40:16] "[37mGET /api/v1/scraper?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Jul/2020 11:40:16] "[37mGET /api/v1/scraper?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Jul/2020 11:40:16] "[37mGET /api/v1/scraper?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Jul/2020 11:40:16] "[37mGET /api/v1/scraper?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [26/Jul/2020 11:40:16] "[37mGET /api/v1/scraper?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:apps.matcher_scraper.blueprint:Scrapper Service Called
+INFO:apps.utils.model.service:Initiate Process Service
+INFO:apps.matcher_scraper.blueprint:Injecting service data
+INFO:apps.matcher_scraper.blueprint:Executing Scrapper service
+INFO:apps.utils.model.service:Starting service process ...
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): en.wikipedia.org:443
+DEBUG:urllib3.connectionpool:https://en.wikipedia.org:443 "GET /wiki/IU_(singer) HTTP/1.1" 200 116610
+INFO:apps.utils.model.service:Creating process stats ...
+INFO:apps.utils.model.service:Ready to output process result
+INFO:apps.utils.model.output:Start Outputing Result
+INFO:werkzeug:127.0.0.1 - - [26/Jul/2020 11:40:28] "[37mPOST /api/v1/scraper/ HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\William\\Documents\\dev\\proj\\KeyMatcher\\Key-MatcherBE\\apps\\utils\\model\\preprocess.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 116-214-213
+INFO:werkzeug: * Running on http://127.0.0.1:3000/ (Press CTRL+C to quit)
