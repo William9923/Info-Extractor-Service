@@ -1,1 +1,1 @@
-web: gunicorn --log-file=- 'apps:create_app()' --log-level=debug --log-file=-
+web: gunicorn --log-file=- 'run:app' --log-level=debug --log-file=-
