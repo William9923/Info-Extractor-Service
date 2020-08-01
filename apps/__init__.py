@@ -24,7 +24,7 @@ def create_app(test_config=None):
         SECRET_KEY='dev',
     )
 
-    gunicorn_logger = logging.getLogger('gunicorn.error')
+    gunicorn_logger = logging.getLogger('gunicorn.debug')
     app.logger.handlers = gunicorn_logger.handlers
     app.logger.setLevel(gunicorn_logger.level)
 
