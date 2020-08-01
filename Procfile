@@ -1,1 +1,1 @@
-web: gunicorn 'apps:create_app()' --log-level=debug
+web: gunicorn 'apps:create_app()' --log-level=error
