@@ -1,1 +1,1 @@
-web: ./deploy.sh
+web: gunicorn --log-file=- 'apps:create_app()' --log-level=debug --log-file=-
