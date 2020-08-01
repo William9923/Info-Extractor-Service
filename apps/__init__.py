@@ -12,6 +12,7 @@ def configure_logging():
     # register root logging
     logging.basicConfig(filename='logging.log',level=logging.DEBUG)
     logging.getLogger('werkzeug').setLevel(logging.DEBUG)
+    
 
 def create_app(test_config=None):
     # setup logger
@@ -22,6 +23,10 @@ def create_app(test_config=None):
     app.config.from_mapping(
         SECRET_KEY='dev',
     )
+
+    gunicorn_logger = logging.getLogger('gunicorn.error')
+    app.logger.handlers = gunicorn_logger.handlers
+    app.logger.setLevel(gunicorn_logger.level)
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
