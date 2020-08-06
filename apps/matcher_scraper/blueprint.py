@@ -10,37 +10,24 @@ from apps.utils.model.validation import ScrapperForm
 LOG = logging.getLogger(__name__)
 scraper =  Blueprint('scraper', __name__, url_prefix=generate_prefix_key() + "/scraper")
 
-@scraper.route('/', methods=['POST', 'GET'])
+@scraper.route('/', methods=['GET'])
 def scraper_service():
     LOG.info("Scrapper Service Called")
-    form = ScrapperForm(request.form)
-    if request.method == "POST" :
-        if form.validate():
-            factory = AlgorithmFactory()
-            try :
-                algo = factory.getAlgo(request.form["algo"])
-            except ValueError :
-                LOG.error("Failed to parse algorithm. Using default algorith : regex")
-                algo = factory.getAlgo("regex")
+    
+    factory = AlgorithmFactory()
+    try :
+        algo = factory.getAlgo(request.args.get("algo"))
+    except ValueError :
+        LOG.error("Failed to parse algorithm. Using default algorith : regex")
+        algo = factory.getAlgo("regex")
 
-            service = ScrapperService(algo)
+    service = ScrapperService(algo)
 
-            LOG.info("Injecting service data")
-            service.data = {
-                'keyword' : request.form.get('keyword'),
-                'url' : request.form.get('url'),
-            }
+    LOG.info("Injecting service data")
+    service.data = {
+        'keyword' : request.args.get('keyword'),
+        'url' : request.args.get('url'),
+    }
 
-            LOG.info("Executing Scrapper service")
-            return service.do()
-        else :
-
-            LOG.warning("Data Form not filled correctly. Beware of malicious attemps!!")
-            return jsonify({
-                "error" : "Prerequiste data not filled correctly"
-            })
-
-
-    return jsonify({
-        "message" : "Welcome to Scrapper Matcher Service"
-    })
+    LOG.info("Executing Scrapper service")
+    return service.do()
