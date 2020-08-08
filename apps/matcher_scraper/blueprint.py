@@ -21,12 +21,15 @@ def scraper_service():
         LOG.error("Failed to parse algorithm. Using default algorith : regex")
         algo = factory.getAlgo("regex")
 
+    keyword = request.args['keyword'];
+    url = request.args['url']
+
     service = ScrapperService(algo)
 
     LOG.info("Injecting service data")
     service.data = {
-        'keyword' : request.args.get('keyword'),
-        'url' : request.args.get('url'),
+        'keyword' : keyword,
+        'url' : url,
     }
 
     LOG.info("Executing Scrapper service")

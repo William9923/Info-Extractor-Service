@@ -23,10 +23,13 @@ def text_service():
 
     service = TextService(algo)
 
+    keyword = request.args['keyword']
+    content = request.args['content']
+
     LOG.info("Injecting service data")
     service.data = {
-        'keyword' : request.args.get('keyword'),
-        'content' : request.args.get('content'),
+        'keyword' : keyword,
+        'content' : content,
     }
 
     LOG.info("Executing Text service")

@@ -2,6 +2,7 @@ import os
 
 from flask import Flask, jsonify
 from werkzeug.exceptions import HTTPException
+from werkzeug.exceptions import BadRequest
 import logging
 
 from apps.matcher_text.blueprint import text 
@@ -52,9 +53,15 @@ def create_app(test_config=None):
         response.status_code = error.status_code 
         return response
 
+    @app.errorhandler(BadRequest)
+    def handle_bad_request(e):
+        return jsonify({
+            "message" : "Bad Request!",
+            "code" : 400
+        })
+
     # checking connection
     @app.route('/')
     def hello():
-        strs = os.environ.get('SECRET_KEY') + os.environ.get('API_KEY')
-        return 'Welcome! Key Matcher Backend Service ' + strs
+        return 'Welcome! Key Matcher Backend Service. Please check the <a href="https://info-extractor-docs.netlify.app/">documentation</a> for more info!'
     return app
